@@ -10,13 +10,13 @@ function getItemIdFromElement(item) {
   return $(item).closest("section").data("item-id");
 }
 
-function validateForm(){
+/*function validateForm(){
   let url = $("#url").val();
   if(!url.startsWith('https://') || !url.startsWith('http://')){
     alert('url must follow format: https://www.YOURWEBSITE.com');
     throw new Error('url must start with https://');
 }
-}
+}*/
 
 //these functions execute functions after the coresponding button is clicked
 const handleAddBookmark = () => {
@@ -32,8 +32,8 @@ const handleSubmit = () => {
   $("main").on("submit", "#bookmarkForm", function (evt) {
     evt.preventDefault();
     try{
-      validateForm();
-      let title = $("#bookmarkName").val();
+      //validateForm();
+    let title = $("#bookmarkName").val();
     let url = $("#url").val();
     let desc = $("#bookmarkDescription").val();
     let rating = $('input[name="rating"]:checked').val();

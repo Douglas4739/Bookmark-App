@@ -31,7 +31,7 @@ const createBookmark = (bookmark) => {
       }
       return resp.json();
     })
-    .catch(err => alert('url must follow format: https://www.YOURWEBSITE.com'));
+    .catch(err => alert('url must start with https:// or http://'));
 }; 
 
 
