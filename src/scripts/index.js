@@ -140,8 +140,22 @@ const toggleStarted = () => {
 //this function dynamicly renders content to the DOM
 function render() {
   if (!store.started) {
-    $("main").html(template.startPage());
-    $('#minimumRating').val(store.minimum);
+    if(store.filtered === false){
+      $("main").html(template.startPage());
+      const html = template.generateBookmarkStrings(store.items);
+      $('#bookmarkResults').html(html);
+    } else{
+      $("main").html(template.startPage());
+      $('#minimumRating').val(store.minimum);
+      const filter = store.items.filter(bookmark => {
+        return bookmark.rating >= store.minimum;
+        
+      })
+      const html = template.generateBookmarkStrings(filter);
+      $('#bookmarkResults').html(html);
+    }
+    
+    
   } else {
     $("main").html(template.newBookmarkTemp());
   }

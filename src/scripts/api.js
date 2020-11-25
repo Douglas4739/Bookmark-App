@@ -1,8 +1,6 @@
 /* eslint-disable no-console */
 import store from './store.js';
 
-
-
 function getItems(render) {
   return fetch('https://thinkful-list-api.herokuapp.com/douglas/bookmarks')
 
